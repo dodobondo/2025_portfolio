@@ -1,15 +1,20 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+// src/app/layout.tsx
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import type { Metadata } from "next";
+import { Providers } from "./providers";
+import { M_PLUS_Rounded_1c, Roboto_Mono, } from "next/font/google";
+import TypekitLoader from "../components/TypekitLoader"; //AdobeFontsの読み込みコンポーネント
+
+const mPlusRounded1c = M_PLUS_Rounded_1c({
+  weight: ["400", "700"],
   subsets: ["latin"],
+  variable: "--font-m-plus-rounded-1c", 
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const robotoMono = Roboto_Mono({
+  weight: ["400"], 
   subsets: ["latin"],
+  variable: "--font-roboto-mono",
 });
 
 export const metadata: Metadata = {
@@ -19,15 +24,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html
+      lang="ja"
+      className={`${mPlusRounded1c.variable} ${robotoMono.variable}`}
+      suppressHydrationWarning={true}
+    >
+      <head>
+      </head>
+      <body>
+        <Providers>{children}</Providers>
+        <TypekitLoader />
       </body>
     </html>
   );

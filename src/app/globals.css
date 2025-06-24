@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 
 :root {
   --background: #ffffff;
@@ -23,4 +23,33 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* src/app/globals.css */
+
+/* Next.jsのnext/fontが生成するCSS変数をbodyに直接適用 (これはそのまま維持) */
+body {
+  font-family: var(--font-m-plus-rounded-1c), sans-serif;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-m-plus-rounded-1c), sans-serif; /* M Plus Rounded 1c に合わせるか、Roboto Monoにしたい場合は適宜修正 */
+}
+
+/* --- ここにChakra UIのCSSリセット相当の内容を追加 --- */
+/* Chakra UIのデフォルトリセットCSSを参考に、必要に応じて追加 */
+/* 例: */
+html, body, #__next {
+  height: 100%;
+}
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+/* ブラウザデフォルトスタイルのリセットは、通常はNormalize.cssやChakra UIのCSSリセット機能がやってくれます。
+   Chakra UIのresetCSSをoffにした場合、必要であれば https://github.com/chakra-ui/chakra-ui/blob/main/packages/components/css-reset/src/css-reset.tsx
+   あたりの内容を参考に、HTML要素のデフォルトスタイルをリセットするCSSを自分で追加する必要があります。
+   ただし、まずはHydrationエラーの解決を優先し、この部分は最小限にとどめるか、後回しにしても構いません。
+*/
+/* --- ここまで --- */
+
+/* その他の既存のグローバルCSSルールがあればここに */
