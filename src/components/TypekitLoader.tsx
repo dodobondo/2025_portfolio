@@ -7,7 +7,7 @@ const TypekitLoader = () => {
   useEffect(() => {
     (function (d) {
       var config = {
-          kitId: "vzk2wef", 
+          kitId: "vzk2wef",
           scriptTimeout: 3000,
           async: true,
         },

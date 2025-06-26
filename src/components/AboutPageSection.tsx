@@ -28,39 +28,42 @@ const AboutPageSection = () => {
   return (
     <>
       <Box
+        display="flex"
         id="about_page"
         bg={bgColor}
-        py={20}
+        py={10}
         px={6}
         backgroundColor="#0071bc"
+        height="100vh"
+        justifyContent="center"
+        alignItems="center"
       >
         <Container maxW="7xl">
           <Heading
-            as="h3"
+            as="h1"
             textAlign="center"
-            mb={10}
-            fontFamily="segoe-ui, sans-serif"
-            fontWeight="400"
+            mb={4}
+            mt={-20}
+            fontSize={{ base: "3xl", md: "5xl" }}
+            fontWeight="500"
             color="white"
+            opacity={0.9}
           >
-            About This Page
+            ようこそ
           </Heading>
           <Text
             as="p"
             textAlign="center"
-            fontSize="md"
-            lineHeight="1.8"
-            mb={15}
+            fontSize="xl"
+            lineHeight="1.7"
             color="white"
-            fontFamily="hiragino-kaku-gothic-pron, sans-serif"
+            opacity={0.9}
           >
             このサイトを訪れてくださり、誠にありがとうございます。
             <br />
             ここは Makino のポートフォリオサイトです。
             <br />
-            あなたに、私のことを知ってほしいと思って作りました。
-            <br />
-            どうぞごゆっくり。
+            私のことを知る旅を、ゆったりとお楽しみください。
           </Text>
         </Container>
       </Box>
@@ -70,7 +73,7 @@ const AboutPageSection = () => {
         overflow="hidden"
         height="100px"
         width="100%"
-        mt={0}
+        bg="#fcfcfc"
       >
         <Box
           display="flex"
@@ -79,14 +82,14 @@ const AboutPageSection = () => {
         >
           <Box
             as="img"
-            src="/wave.svg"
+            src="parts_img/wave.svg"
             alt="wave"
             width="100%"
             objectFit="cover"
           />
           <Box
             as="img"
-            src="/wave.svg"
+            src="parts_img/wave.svg"
             alt="wave-copy"
             width="100%"
             objectFit="cover"

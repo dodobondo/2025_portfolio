@@ -1,59 +1,102 @@
+// src/components/ContactSection.tsx
+
 "use client";
 
 import {
   Container,
   Heading,
   Text,
-  VStack,
-  HStack,
+  Flex,
+  Box,
+  Button,
   Link,
+  HStack,
   IconButton,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
+const scroll = keyframes`
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+`;
+
 const ContactSection = () => {
-  const textColor = useColorModeValue("gray.800", "whiteAlpha.900");
+  const bgColor = useColorModeValue("#0071bc", "gray.900");
+  const textColor = useColorModeValue("blue.500", "whiteAlpha.900");
 
   return (
-    <Container id="contact" maxW={"7xl"} p="12">
-      <Heading as="h2" textAlign="center" mb={10}>
-        お問い合わせ
-      </Heading>
-      <VStack spacing={4} alignItems="center">
-        <Text fontSize="lg" color={textColor}>
-          ご興味をお持ちいただけましたら、お気軽にご連絡ください。
-        </Text>
-        <Link
-          href="mailto:your.email@example.com"
-          fontSize="xl"
-          fontWeight="bold"
-          color="orange.500"
+    <>
+      <Box position="relative" overflow="hidden" width="100%" bg="#fcfcfc">
+        {/* 波のアニメーション */}
+        <Box
+          display="flex"
+          width="100%"
+          animation={`${scroll} 30s linear infinite`}
         >
-          your.email@example.com
-        </Link>
-        <HStack spacing={4} mt={6}>
-          <Link href="https://github.com/yourusername" isExternal>
-            <IconButton
-              aria-label="GitHub"
-              icon={<FaGithub />}
-              size="lg"
-              isRound
-              colorScheme="gray"
-            />
-          </Link>
-          <Link href="https://linkedin.com/in/yourusername" isExternal>
-            <IconButton
-              aria-label="LinkedIn"
-              icon={<FaLinkedin />}
-              size="lg"
-              isRound
-              colorScheme="blue"
-            />
-          </Link>
-        </HStack>
-      </VStack>
-    </Container>
+          <Box
+            as="img"
+            src="parts_img/wave_over.svg"
+            alt="wave"
+            width="100%"
+            objectFit="cover"
+          />
+          <Box
+            as="img"
+            src="parts_img/wave_over.svg"
+            alt="wave-copy"
+            width="100%"
+            objectFit="cover"
+          />
+        </Box>
+      </Box>
+      <Box
+        display="flex"
+        id="contact"
+        bg={bgColor}
+        height="30vh"
+        justifyContent="center"
+        alignItems="flex-start"
+      >
+        <Container maxW="7xl">
+          <Heading
+            as="h1"
+            py={4}
+            textAlign="center"
+            fontSize={{ base: "3xl", md: "5xl" }}
+            fontWeight="600"
+            color="white"
+            opacity={0.9}
+          >
+            Contact
+          </Heading>
+          {/* Gmailのボタン */}
+          <Flex justify="center" mt={4}>
+            <Link
+              href="mailto:makino.yeah.work@gmail.com"
+              isExternal
+              _hover={{ textDecoration: "none" }}
+            >
+              <Button
+                leftIcon={<FaEnvelope color="white" />}
+                size="lg"
+                bg="#0071bc"
+                border="0.5px solid white"
+                borderRadius="full"
+                boxShadow="md"
+                color="white"
+                _hover={{
+                  bg: "whiteAlpha.200",
+                }}
+              >
+                <Text fontWeight="400">makino.yeah.work@gmail.com</Text>
+              </Button>
+            </Link>
+          </Flex>
+        </Container>
+      </Box>
+    </>
   );
 };
 
