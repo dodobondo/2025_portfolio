@@ -141,7 +141,9 @@ const WorksSection = () => {
       </Box>
 
       {/* モーダルコンポーネント */}
-      <WorkModal isOpen={isOpen} onClose={onClose} work={selectedWork} />
+      {selectedWork && (
+        <WorkModal isOpen={isOpen} onClose={onClose} work={selectedWork} />
+      )}
     </>
   );
 };
