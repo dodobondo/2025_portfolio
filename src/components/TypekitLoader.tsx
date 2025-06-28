@@ -23,14 +23,11 @@ const TypekitLoader = () => {
       h.className += " wf-loading";
       tk.src = "https://use.typekit.net/" + config.kitId + ".js";
       tk.async = true;
-      tk.onload = tk.onreadystatechange = function () {
-        a = this.readyState;
-        if (f || (a && a != "complete" && a != "loaded")) return;
-        f = true;
+      tk.onload = function () {
         clearTimeout(t);
         try {
-          Typekit.load(config);
-        } catch  {}
+          (window as any).Typekit.load(config);
+        } catch {}
       };
       s.parentNode.insertBefore(tk, s);
     })(document);
