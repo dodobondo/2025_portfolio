@@ -140,7 +140,7 @@ const WorkModal = ({ isOpen, onClose, work }: WorkModalProps) => {
                       />
                     </Link>
                   )}
-                  {work.youtubeUrl && ( // データにyoutubeUrlがあれば表示
+                  {work.youtubeUrl && ( 
                     <Link href={work.youtubeUrl} isExternal>
                       <IconButton
                         aria-label="YouTube"
@@ -151,7 +151,7 @@ const WorkModal = ({ isOpen, onClose, work }: WorkModalProps) => {
                       />
                     </Link>
                   )}
-                  {work.websiteUrl && ( // データにwebsiteUrlがあれば表示
+                  {work.websiteUrl && ( 
                     <Link href={work.websiteUrl} isExternal>
                       <IconButton
                         aria-label="Website"

@@ -7,6 +7,7 @@ export interface Work {
     summary: string;
     description: string;
     tools: string[];
+    githubUrl?: string;
     youtubeUrl?: string;
     websiteUrl?: string;
   }
