@@ -39,7 +39,7 @@ interface WorkModalProps {
 }
 
 const WorkModal = ({ isOpen, onClose, work }: WorkModalProps) => {
-  const bgColor = useColorModeValue("gray.500", "gray.900");
+  const bgColor = useColorModeValue("gray.500", "gray.800");
   const textColor = useColorModeValue("gray.700", "whiteAlpha.900");
   const titleColor = useColorModeValue("white", "whiteAlpha.900");
 
@@ -93,11 +93,12 @@ const WorkModal = ({ isOpen, onClose, work }: WorkModalProps) => {
           >
             {/*左カラム (情報) */}
             <VStack
+              order={{ base: 2, lg: 1 }}
               align="start"
               spacing={5}
               flex={{ base: "none", lg: 1.5 }}
               maxW={{ base: "100%", lg: "50%" }}
-              divider={<Divider />} // 各セクションの間に区切り線を表示
+              divider={<Divider />}
             >
               {/* Description セクション */}
               <VStack align="start" spacing={2} w="100%">
@@ -153,8 +154,8 @@ const WorkModal = ({ isOpen, onClose, work }: WorkModalProps) => {
                     <Link href={work.websiteUrl} isExternal>
                       <IconButton
                         aria-label="Website"
-                        icon={<Icon as={FaLink} boxSize={7} />}
-                        color="#FF0000"
+                        icon={<Icon as={FaLink} boxSize={5} />}
+                        color="blue.500"
                         isRound
                         size="lg"
                       />
@@ -164,7 +165,9 @@ const WorkModal = ({ isOpen, onClose, work }: WorkModalProps) => {
               </VStack>
             </VStack>
 
+            {/* 右カラム */}
             <VStack
+              order={{ base: 1, lg: 2 }}
               flex={{ base: "none", lg: 1 }}
               w="100%"
               spacing={4}

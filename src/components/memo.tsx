@@ -45,11 +45,10 @@ const Footer = () => {
             <IconButton
               aria-label="Scroll to top"
               isRound
-              // size="lg" プロパティを削除し、以下のプロパティでサイズを直接指定
-              boxSize={{ base: "48px", md: "60px" }} // ボタン自体のサイズ（スマホとPCで変更）
+              boxSize={{ base: "48px", md: "60px" }}
               color="white"
               bg="#0071bc"
-              border="1px solid white" // 枠線を少し太く
+              border="1px solid white"
               boxShadow="md"
               _hover={{
                 bg: "whiteAlpha.200",
@@ -57,9 +56,7 @@ const Footer = () => {
                 boxShadow: "lg",
               }}
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              icon={
-                <FaArrowUp size="24px" /> // アイコン自体のサイズを指定
-              }
+              icon={<FaArrowUp size="24px" />}
             />
           </Flex>
         </Flex>
@@ -71,7 +68,7 @@ const Footer = () => {
           left="50%"
           transform="translate(-50%, -50%)"
         >
-          <Link href="https://github.com/あなたのユーザー名" isExternal>
+          <Link href="https://github.com/dodobondo" isExternal>
             <IconButton
               aria-label="GitHub"
               icon={<FaGithub />}

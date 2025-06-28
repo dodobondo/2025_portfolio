@@ -2,15 +2,18 @@
 
 "use client"; 
 
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 
 
 import customTheme from "../theme"; // カスタムテーマをインポート
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
+    <>
+      <ColorModeScript initialColorMode={customTheme.config.initialColorMode} />
       <ChakraProvider theme={customTheme}>
         {children}
       </ChakraProvider>
+    </>
   );
 }

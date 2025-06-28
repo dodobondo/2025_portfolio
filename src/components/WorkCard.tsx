@@ -19,7 +19,7 @@ interface WorkCardProps {
 }
 
 const WorkCard = ({ work, onOpen }: WorkCardProps) => {
-  const textColor = useColorModeValue("gray.700", "gray.400");
+  const textColor = useColorModeValue("gray.700", "whiteAlpha.900");
 
   return (
     <Flex direction="column" h="100%" p={6}>
@@ -50,9 +50,10 @@ const WorkCard = ({ work, onOpen }: WorkCardProps) => {
           color="blue.500"
           fontSize="sm"
           fontWeight="bold"
-          opacity={0.6}
+          opacity={0.5}
           mt={2}
           fontFamily="segoe-ui, sans-serif"
+          letterSpacing="1px"
         >
           {work.category}
         </Text>
@@ -61,12 +62,12 @@ const WorkCard = ({ work, onOpen }: WorkCardProps) => {
           fontSize="22px"
           color={textColor}
           mt={-1.5}
-          mb={1}
-          fontWeight="700"
+          mb={0}
+          fontWeight="600"
         >
           {work.title}
         </Heading>
-        <Text color={textColor} noOfLines={2}>
+        <Text color={textColor} noOfLines={3}>
           {work.summary}
         </Text>
       </VStack>
@@ -75,14 +76,17 @@ const WorkCard = ({ work, onOpen }: WorkCardProps) => {
       <Flex w="100%" justify="flex-end" mt={2}>
         <Button
           variant="outline"
-          borderColor="gray.600"
-          color="gray.600"
+          borderWidth="xs"
+          borderColor={useColorModeValue("gray.600", "whiteAlpha.900")}
+          color={useColorModeValue("gray.600", "whiteAlpha.900")}
           borderRadius="3xl"
+          fontWeight="500"
           size="sm"
           onClick={onOpen}
           _hover={{
-            bg: "gray.600",
-            color: "white",
+            // bg: "white",
+            borderColor: useColorModeValue("gray.500", "whiteAlpha.800"),
+            color: useColorModeValue("gray.500", "whiteAlpha.800"),
           }}
         >
           詳しく見る

@@ -10,7 +10,7 @@ import {
   Box,
   Button,
   Link,
-  HStack,
+  VStack,
   IconButton,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -23,12 +23,12 @@ const scroll = keyframes`
 `;
 
 const ContactSection = () => {
-  const bgColor = useColorModeValue("#0071bc", "gray.900");
+  const bgColor = useColorModeValue("#fcfcfc", "gray.600");
   const textColor = useColorModeValue("blue.500", "whiteAlpha.900");
 
   return (
     <>
-      <Box position="relative" overflow="hidden" width="100%" bg="#fcfcfc">
+      <Box position="relative" overflow="hidden" width="100%" bg={bgColor}>
         {/* 波のアニメーション */}
         <Box
           display="flex"
@@ -54,46 +54,48 @@ const ContactSection = () => {
       <Box
         display="flex"
         id="contact"
-        bg={bgColor}
+        bg="#0071bc"
         height="30vh"
         justifyContent="center"
-        alignItems="flex-start"
+        alignItems="center"
       >
         <Container maxW="7xl">
-          <Heading
-            as="h1"
-            py={4}
-            textAlign="center"
-            fontSize={{ base: "3xl", md: "5xl" }}
-            fontWeight="600"
-            color="white"
-            opacity={0.9}
-          >
-            Contact
-          </Heading>
-          {/* Gmailのボタン */}
-          <Flex justify="center" mt={4}>
-            <Link
-              href="mailto:makino.yeah.work@gmail.com"
-              isExternal
-              _hover={{ textDecoration: "none" }}
+          <VStack py={16} mb={16}>
+            <Heading
+              as="h1"
+              py={2}
+              textAlign="center"
+              fontSize={{ base: "5xl", md: "7xl" }}
+              fontWeight="600"
+              color="white"
+              opacity={0.9}
             >
-              <Button
-                leftIcon={<FaEnvelope color="white" />}
-                size="lg"
-                bg="#0071bc"
-                border="0.5px solid white"
-                borderRadius="full"
-                boxShadow="md"
-                color="white"
-                _hover={{
-                  bg: "whiteAlpha.200",
-                }}
+              Contact
+            </Heading>
+            {/* Gmailのボタン */}
+            <Flex justify="center" mt={2}>
+              <Link
+                href="mailto:makino.yeah.work@gmail.com"
+                isExternal
+                _hover={{ textDecoration: "none" }}
               >
-                <Text fontWeight="400">makino.yeah.work@gmail.com</Text>
-              </Button>
-            </Link>
-          </Flex>
+                <Button
+                  leftIcon={<FaEnvelope color="white" />}
+                  size={{ base: "md", md: "lg" }}
+                  bg="#0071bc"
+                  border="0.5px solid white"
+                  borderRadius="full"
+                  boxShadow="md"
+                  color="white"
+                  _hover={{
+                    bg: "whiteAlpha.200",
+                  }}
+                >
+                  <Text fontWeight="400">makino.yeah.work@gmail.com</Text>
+                </Button>
+              </Link>
+            </Flex>
+          </VStack>
         </Container>
       </Box>
     </>

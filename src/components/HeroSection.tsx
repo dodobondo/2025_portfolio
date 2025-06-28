@@ -2,8 +2,8 @@
 
 "use client";
 
-import { Box, useColorModeValue } from "@chakra-ui/react"; 
-import { useState, useEffect } from "react"; 
+import { Box, useColorModeValue } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 
 const HeroSection = () => {
   const bgColor = useColorModeValue("gray.50", "gray.900");
@@ -21,15 +21,19 @@ const HeroSection = () => {
       id="hero"
       position="relative"
       width="100%"
-      height="100vh"
-      overflow="hidden"
-      // SVG画像をCSSの背景画像として設定（直接画像読み込みだとうまくいかなかった）
-      backgroundImage={animatedSvgUrl ? `url('${animatedSvgUrl}')` : "none"}
-      backgroundSize="cover"
-      backgroundPosition="center" 
-      backgroundRepeat="no-repeat" 
-      backgroundColor="#92d7f3"
+      aspectRatio={{ base: 16 / 10, md: 16 / 9 }}
+      bg="#92d7f3"
     >
+      <Box
+        height="100%"
+        overflow="hidden"
+        py={100}
+        backgroundImage={animatedSvgUrl ? `url('${animatedSvgUrl}')` : "none"}
+        backgroundSize="contain"
+        backgroundPosition={{ base: "center bottom", md: "center" }}
+        backgroundRepeat="no-repeat"
+        backgroundColor="#92d7f3"
+      ></Box>
     </Box>
   );
 };

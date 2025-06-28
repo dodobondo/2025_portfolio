@@ -7,6 +7,7 @@ import {
   Box,
   Heading,
   Text,
+  Link,
   Image,
   useColorModeValue,
   VStack,
@@ -23,7 +24,15 @@ import GraphicCarousel from "./GraphicCarousel";
 
 const WorksSection = () => {
   const textColor = useColorModeValue("gray.700", "whiteAlpha.900");
-  const bgColor = useColorModeValue("#fcfcfc", "gray.900");
+  const bgColor = useColorModeValue("#fcfcfc", "gray.600");
+  const graphicsTitle = useColorModeValue(
+    "parts_img/graphics_title.svg",
+    "parts_img/graphics_title_dark.svg"
+  );
+  const appsTitle = useColorModeValue(
+    "parts_img/apps_title.svg",
+    "parts_img/apps_title_dark.svg"
+  );
   // モーダルの状態管理
   const { isOpen, onOpen, onClose } = useDisclosure();
   // 選択された制作物を管理
@@ -41,8 +50,8 @@ const WorksSection = () => {
           <Flex align="center" mb={16} width="100%">
             <Box
               borderBottom="1.5px solid"
-              borderColor="gray.700"
-              width="100px"
+              borderColor={textColor}
+              width={{ base: "30px", md: "100px" }}
               mr={3}
             />
             <Heading
@@ -63,8 +72,8 @@ const WorksSection = () => {
               Works
             </Heading>
           </Flex>
-          <Flex mb={12} justify="center">
-            <Image src="parts_img/apps_title.svg" h="50px"></Image>
+          <Flex mb={{ base: 5, md: 10 }} justify="center">
+            <Image src={appsTitle} h={{ base: "35px", md: "45px" }}></Image>
           </Flex>
           {/* 制作物（Apps）*/}
           <SimpleGrid
@@ -85,8 +94,8 @@ const WorksSection = () => {
           </SimpleGrid>
 
           {/* 制作物（Graphics） */}
-          <Flex mb={16} justify="center">
-            <Image src="parts_img/graphics_title.svg" h="50px"></Image>
+          <Flex mb={{ base: 8, md: 12 }} justify="center">
+            <Image src={graphicsTitle} h={{ base: "35px", md: "45px" }}></Image>
           </Flex>
           {/* Club Activityセクション */}
           <VStack align="center" mb={20} color={textColor}>
@@ -97,16 +106,12 @@ const WorksSection = () => {
             <Heading as="h3" size="xl" mt={-2} mb={2}>
               Club Activity
             </Heading>
-            <Text textAlign="center" mb={8}>
-              ここにテキストが入る。ここにテキストが入る。本当のテキストはもっと長い。
+            <Text textAlign="left" mb={8}>
+              学部時代は謎解きサークルに所属し、制作した謎解きイベントのデザインも担当していました。
               <br />
-              ここにさらにテキストが入る。テキストはもっともっと長い。
-              <br />
-              ここにさらにさらにテキストが入る。本当のテキストはもっともっと長い。
+              商業イベントへの出店・企業とのコラボにて、多くの人の興味・参加体験の向上を意識して制作しました。
             </Text>
-            <Box
-              width="100vw"
-            >
+            <Box width="100vw">
               <GraphicCarousel images={graphicsClub} />
             </Box>
           </VStack>
@@ -120,17 +125,12 @@ const WorksSection = () => {
             <Heading as="h3" size="xl" mt={-2} mb={2}>
               Game Hobby
             </Heading>
-            <Text color={textColor} textAlign="center" mb={8}>
-              ここにテキストが入る。ここにテキストが入る。本当のテキストはもっと長い。
+            <Text color={textColor} textAlign="left" mb={8}>
+              任天堂Switchで発売された対戦ゲーム「スマブラsp」が大好きで、対戦以外の遊び方も考案して楽しんでいます。
               <br />
-              ここにさらにテキストが入る。テキストはもっともっと長い。
-              <br />
-              ここにさらにさらにテキストが入る。本当のテキストはもっともっと長い。
+              考案した企画をより多くの人に遊んでいただくために、ビジュアル・紹介動画を制作し、SNSで公開しました。
             </Text>
             <Box
-              // position="absolute"
-              // left="50%"
-              // transform="translateX(-50%)"
               width="100vw" //親要素が画面幅を制限していても上書きできる
               mb={10}
             >

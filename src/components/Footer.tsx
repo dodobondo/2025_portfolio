@@ -5,6 +5,7 @@ import {
   Container,
   Text,
   Flex,
+  VStack,
   IconButton,
   Link,
   useColorModeValue,
@@ -12,11 +13,11 @@ import {
 import { FaGithub, FaArrowUp } from "react-icons/fa";
 
 const Footer = () => {
-  const bgColor = useColorModeValue("#0071bc", "gray.900");
+  const bgColor = useColorModeValue("#0071bc", "gray.600");
   const textColor = useColorModeValue("white", "gray.200");
 
   return (
-    <Box bg={bgColor}>
+    <Box bg="#0071bc">
       {/* relativeはabsoluteの起点になるため必要 */}
       <Container maxW="95vw" py={0} mx="auto" position="relative">
         {/* 点線 */}
@@ -33,55 +34,51 @@ const Footer = () => {
           opacity={0.9}
           mb={0}
         />
-
-        {/* 下部コンテンツ（左右に分ける） */}
-        <Flex justify="space-between" align="center" py={5}>
-          {/* 左側テキスト */}
-          <Text fontSize="lg" color={textColor} opacity={0.9}>
+        <VStack justify="center" py="4">
+          <Box>
+            <Link href="https://github.com/dodobondo" isExternal>
+              <IconButton
+                aria-label="GitHub"
+                icon={<FaGithub />}
+                isRound
+                bg="white"
+                color="gray.700"
+                opacity="0.9"
+                boxSize={{ base: "40px", md: "48px" }}
+                _hover={{
+                  bg: "whiteAlpha.800",
+                }}
+              />
+            </Link>
+          </Box>
+          <Text
+            fontSize={{ base: "sm", md: "lg" }}
+            color={textColor}
+            opacity={0.9}
+          >
             © {new Date().getFullYear()} Toshiki Makino. All rights reserved.
           </Text>
-          {/* 右側にページトップボタン */}
-          <Flex gap={6} align="center">
-            <IconButton
-              aria-label="Scroll to top"
-              isRound
-              boxSize={{ base: "48px", md: "60px" }} 
-              color="white"
-              bg="#0071bc"
-              border="1px solid white" 
-              boxShadow="md"
-              _hover={{
-                bg: "whiteAlpha.200",
-                transform: "translateY(-2px)",
-                boxShadow: "lg",
-              }}
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              icon={
-                <FaArrowUp size="24px" />
-              }
-            />
-          </Flex>
-        </Flex>
+        </VStack>
 
-        {/* ページ中央にGitHubアイコン */}
-        <Box
-          position="absolute"
-          top="50%"
-          left="50%"
-          transform="translate(-50%, -50%)"
-        >
-          <Link href="https://github.com/あなたのユーザー名" isExternal>
-            <IconButton
-              aria-label="GitHub"
-              icon={<FaGithub />}
-              isRound
-              // variant="outline"
-              bg="white"
-              opacity="0.9"
-              size="lg"
-            />
-          </Link>
-        </Box>
+        {/* 右側にページトップボタン */}
+        <Flex gap={6} position="absolute" bottom="10%" right="3%">
+          <IconButton
+            aria-label="Scroll to top"
+            isRound
+            boxSize={{ base: "48px", md: "60px" }}
+            color="white"
+            bg="#0071bc"
+            border="1px solid white"
+            boxShadow="md"
+            _hover={{
+              bg: "whiteAlpha.200",
+              transform: "translateY(-2px)",
+              boxShadow: "lg",
+            }}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            icon={<FaArrowUp size="24px" />}
+          />
+        </Flex>
       </Container>
     </Box>
   );

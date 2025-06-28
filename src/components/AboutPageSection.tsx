@@ -22,18 +22,17 @@ const scroll = keyframes`
 `;
 
 const AboutPageSection = () => {
-  const bgColor = useColorModeValue("gray.50", "gray.900");
+  const bgColor = useColorModeValue("#fcfcfc", "gray.600");
   const textColor = useColorModeValue("gray.800", "whiteAlpha.900");
 
   return (
-    <>
+    <Box bg={bgColor}>
       <Box
         display="flex"
         id="about_page"
-        bg={bgColor}
         py={10}
         px={6}
-        backgroundColor="#0071bc"
+        bg="#0071bc"
         height="100vh"
         justifyContent="center"
         alignItems="center"
@@ -54,7 +53,7 @@ const AboutPageSection = () => {
           <Text
             as="p"
             textAlign="center"
-            fontSize="xl"
+            fontSize={{ base: "lg", md: "xl" }}
             lineHeight="1.7"
             color="white"
             opacity={0.9}
@@ -73,7 +72,7 @@ const AboutPageSection = () => {
         overflow="hidden"
         height="100px"
         width="100%"
-        bg="#fcfcfc"
+        bg={bgColor}
       >
         <Box
           display="flex"
@@ -96,7 +95,7 @@ const AboutPageSection = () => {
           />
         </Box>
       </Box>
-    </>
+    </Box>
   );
 };
 
