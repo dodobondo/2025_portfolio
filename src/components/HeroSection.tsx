@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Box} from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 
 const HeroSection = () => {

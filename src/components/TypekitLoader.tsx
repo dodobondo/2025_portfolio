@@ -6,20 +6,20 @@ import { useEffect } from "react";
 const TypekitLoader = () => {
   useEffect(() => {
     (function (d) {
-      let config = {
-          kitId: "vzk2wef",
-          scriptTimeout: 3000,
-          async: true,
-        },
-        h = d.documentElement,
-        t = setTimeout(function () {
-          h.className =
-            h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
-        }, config.scriptTimeout),
-        tk = d.createElement("script"),
-        f = false,
-        s = d.getElementsByTagName("script")[0],
-        a;
+      const config = {
+        kitId: "vzk2wef",
+        scriptTimeout: 3000,
+        async: true,
+      };
+      const h = d.documentElement;
+      const t = setTimeout(function () {
+        h.className =
+          h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout);
+      const tk = d.createElement("script");
+      let f = false;
+      const s = d.getElementsByTagName("script")[0];
+      let a;
       h.className += " wf-loading";
       tk.src = "https://use.typekit.net/" + config.kitId + ".js";
       tk.async = true;
