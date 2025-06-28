@@ -3,10 +3,24 @@
 
 import { useEffect } from "react";
 
+interface TypekitConfig {
+  kitId: string;
+  scriptTimeout: number;
+  async: boolean;
+}
+
+declare global {
+  interface Window {
+    Typekit?: {
+      load: (config: TypekitConfig) => void;
+    };
+  }
+}
+
 const TypekitLoader = () => {
   useEffect(() => {
     (function (d) {
-      const config = {
+      const config:TypekitConfig = {
         kitId: "vzk2wef",
         scriptTimeout: 3000,
         async: true,
@@ -17,19 +31,21 @@ const TypekitLoader = () => {
           h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
       }, config.scriptTimeout);
       const tk = d.createElement("script");
-      let f = false;
-      const s = d.getElementsByTagName("script")[0];
-      let a;
       h.className += " wf-loading";
       tk.src = "https://use.typekit.net/" + config.kitId + ".js";
       tk.async = true;
-      tk.onload = function () {
+      tk.onload = () => {
         clearTimeout(t);
         try {
-          (window as any).Typekit.load(config);
-        } catch {}
+          if (window.Typekit) {
+            window.Typekit.load(config);
+          }
+        } catch (e) {
+          console.error("Error loading Typekit fonts", e);
+        }
       };
-      s.parentNode.insertBefore(tk, s);
+      const s = document.getElementsByTagName("script")[0];
+      s.parentNode?.insertBefore(tk, s);
     })(document);
   }, []);
 
