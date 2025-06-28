@@ -18,7 +18,6 @@ import {
   DrawerBody,
   useDisclosure,
   VStack,
-  Icon,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { HamburgerIcon } from "@chakra-ui/icons";
@@ -45,10 +44,9 @@ const Header = () => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const colorModeTextColor = useColorModeValue("gray.700", "whiteAlpha.900");
 
-  const dynamicTextColor = isOverBlueSection
-    ? "white"
-    : useColorModeValue("gray.700", "whiteAlpha.900");
+  const dynamicTextColor = isOverBlueSection ? "white" : colorModeTextColor;
 
   return (
     <>

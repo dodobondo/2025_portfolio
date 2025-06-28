@@ -5,11 +5,7 @@
 import {
   Box,
   Heading,
-  Image,
   Text,
-  Divider,
-  Wrap,
-  WrapItem,
   useColorModeValue,
   Container,
 } from "@chakra-ui/react";
@@ -23,7 +19,6 @@ const scroll = keyframes`
 
 const AboutPageSection = () => {
   const bgColor = useColorModeValue("#fcfcfc", "gray.600");
-  const textColor = useColorModeValue("gray.800", "whiteAlpha.900");
 
   return (
     <Box bg={bgColor}>

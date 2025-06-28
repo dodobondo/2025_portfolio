@@ -3,7 +3,6 @@
 "use client";
 
 import { extendTheme, ThemeConfig } from "@chakra-ui/react";
-import { body } from "framer-motion/client";
 
 // カスタムフォント
 const fonts = {

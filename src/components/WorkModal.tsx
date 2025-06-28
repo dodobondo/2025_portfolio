@@ -31,11 +31,12 @@ import {
   FaChevronRight,
 } from "react-icons/fa"; // 左右の矢印アイコンを追加
 import { AiFillYoutube } from "react-icons/ai";
+import type { Work } from "../types/work";
 
 interface WorkModalProps {
   isOpen: boolean;
   onClose: () => void;
-  work: any;
+  work: Work;
 }
 
 const WorkModal = ({ isOpen, onClose, work }: WorkModalProps) => {

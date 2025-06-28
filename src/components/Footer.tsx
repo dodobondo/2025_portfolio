@@ -13,7 +13,6 @@ import {
 import { FaGithub, FaArrowUp } from "react-icons/fa";
 
 const Footer = () => {
-  const bgColor = useColorModeValue("#0071bc", "gray.600");
   const textColor = useColorModeValue("white", "gray.200");
 
   return (

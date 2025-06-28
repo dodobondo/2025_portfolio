@@ -9,10 +9,8 @@ import {
   Text,
   useColorModeValue,
   Flex,
-  Spacer,
   Image,
   VStack,
-  HStack,
 } from "@chakra-ui/react";
 
 const AboutMeSection = () => {

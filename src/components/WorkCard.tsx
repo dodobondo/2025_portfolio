@@ -13,8 +13,10 @@ import {
   Button,
 } from "@chakra-ui/react";
 
+import type { Work } from "../types/work";
+
 interface WorkCardProps {
-  work: any;
+  work: Work;
   onOpen: () => void;
 }
 

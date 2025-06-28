@@ -11,11 +11,10 @@ import {
   Button,
   Link,
   VStack,
-  IconButton,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 
 const scroll = keyframes`
   0% { transform: translateX(-50%); }
@@ -24,7 +23,6 @@ const scroll = keyframes`
 
 const ContactSection = () => {
   const bgColor = useColorModeValue("#fcfcfc", "gray.600");
-  const textColor = useColorModeValue("blue.500", "whiteAlpha.900");
 
   return (
     <>

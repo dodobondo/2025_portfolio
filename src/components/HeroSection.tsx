@@ -6,7 +6,6 @@ import { Box, useColorModeValue } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 
 const HeroSection = () => {
-  const bgColor = useColorModeValue("gray.50", "gray.900");
 
   const [animatedSvgUrl, setAnimatedSvgUrl] = useState("");
 

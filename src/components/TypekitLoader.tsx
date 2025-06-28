@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const TypekitLoader = () => {
   useEffect(() => {
     (function (d) {
-      var config = {
+      let config = {
           kitId: "vzk2wef",
           scriptTimeout: 3000,
           async: true,
@@ -30,7 +30,7 @@ const TypekitLoader = () => {
         clearTimeout(t);
         try {
           Typekit.load(config);
-        } catch (e) {}
+        } catch  {}
       };
       s.parentNode.insertBefore(tk, s);
     })(document);

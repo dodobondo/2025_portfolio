@@ -5,15 +5,11 @@
 import {
   Box,
   VStack,
-  IconButton,
   Image,
   Link,
   Text,
-  Icon,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import Marquee from "react-fast-marquee";
-import { AiFillYoutube } from "react-icons/ai";
 
 interface ImageInfo {
   id: number;

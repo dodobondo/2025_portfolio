@@ -7,7 +7,6 @@ import {
   Box,
   Heading,
   Text,
-  Link,
   Image,
   useColorModeValue,
   VStack,
@@ -21,6 +20,7 @@ import { works, graphicsClub, graphicsHobby } from "@/data/works";
 import WorkCard from "./WorkCard";
 import WorkModal from "./WorkModal";
 import GraphicCarousel from "./GraphicCarousel"; 
+import type { Work } from "../types/work";
 
 const WorksSection = () => {
   const textColor = useColorModeValue("gray.700", "whiteAlpha.900");
@@ -36,9 +36,9 @@ const WorksSection = () => {
   // モーダルの状態管理
   const { isOpen, onOpen, onClose } = useDisclosure();
   // 選択された制作物を管理
-  const [selectedWork, setSelectedWork] = useState(null);
+  const [selectedWork, setSelectedWork] = useState<Work | null>(null);
 
-  const handleCardClick = (work: any) => {
+  const handleCardClick = (work: Work) => {
     setSelectedWork(work);
     onOpen();
   };

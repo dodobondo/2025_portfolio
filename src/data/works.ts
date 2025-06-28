@@ -1,7 +1,9 @@
 // /src/data/works.ts
 
+import type { Work } from '../types/work';
+
 // Apps作品
-export const works = [
+export const works: Work[] = [
     {
       id: 1,
       title: '企画アシスタントBot',
