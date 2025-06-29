@@ -2,7 +2,6 @@
 
 import type { Metadata } from "next";
 import { Providers } from "./providers";
-import { M_PLUS_Rounded_1c, Roboto_Mono, } from "next/font/google";
 import TypekitLoader from "../components/TypekitLoader"; //AdobeFontsの読み込みコンポーネント
 
 export const metadata: Metadata = {
