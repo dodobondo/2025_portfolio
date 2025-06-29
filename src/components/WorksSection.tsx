@@ -99,7 +99,6 @@ const WorksSection = () => {
           </Flex>
           {/* Club Activityセクション */}
           <VStack align="center" mb={20} color={textColor}>
-            {/* 装飾 */}
             <Text fontSize="2xl" fontWeight="800" letterSpacing={2}>
               01
             </Text>

@@ -60,7 +60,7 @@ const Footer = () => {
         </VStack>
 
         {/* 右側にページトップボタン */}
-        <Flex gap={6} position="absolute" bottom="10%" right="3%">
+        <Flex gap={6} position="absolute" bottom="10%" right="1%">
           <IconButton
             aria-label="Scroll to top"
             isRound

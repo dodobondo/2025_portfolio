@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import { FaEnvelope } from "react-icons/fa";
+import WaveAnimation from "./WaveAnimation";
 
 const scroll = keyframes`
   0% { transform: translateX(-50%); }
@@ -26,29 +27,7 @@ const ContactSection = () => {
 
   return (
     <>
-      <Box position="relative" overflow="hidden" width="100%" bg={bgColor}>
-        {/* 波のアニメーション */}
-        <Box
-          display="flex"
-          width="100%"
-          animation={`${scroll} 30s linear infinite`}
-        >
-          <Box
-            as="img"
-            src="parts_img/wave_over.svg"
-            alt="wave"
-            width="100%"
-            objectFit="cover"
-          />
-          <Box
-            as="img"
-            src="parts_img/wave_over.svg"
-            alt="wave-copy"
-            width="100%"
-            objectFit="cover"
-          />
-        </Box>
-      </Box>
+      <WaveAnimation imageSrc="/parts_img/wave.svg" bg={bgColor} />
       <Box
         display="flex"
         id="contact"

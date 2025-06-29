@@ -10,12 +10,7 @@ import {
   Container,
 } from "@chakra-ui/react";
 
-import { keyframes } from "@emotion/react";
-
-const scroll = keyframes`
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-`;
+import WaveAnimation from "./WaveAnimation";    
 
 const AboutPageSection = () => {
   const bgColor = useColorModeValue("#fcfcfc", "gray.600");
@@ -61,35 +56,7 @@ const AboutPageSection = () => {
           </Text>
         </Container>
       </Box>
-
-      <Box
-        position="relative"
-        overflow="hidden"
-        height="100px"
-        width="100%"
-        bg={bgColor}
-      >
-        <Box
-          display="flex"
-          width="100%"
-          animation={`${scroll} 30s linear infinite`}
-        >
-          <Box
-            as="img"
-            src="parts_img/wave.svg"
-            alt="wave"
-            width="100%"
-            objectFit="cover"
-          />
-          <Box
-            as="img"
-            src="parts_img/wave.svg"
-            alt="wave-copy"
-            width="100%"
-            objectFit="cover"
-          />
-        </Box>
-      </Box>
+      <WaveAnimation imageSrc="/parts_img/wave_reverse.svg" bg={bgColor} />
     </Box>
   );
 };
