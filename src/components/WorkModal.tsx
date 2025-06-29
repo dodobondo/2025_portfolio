@@ -76,7 +76,7 @@ const WorkModal = ({ isOpen, onClose, work }: WorkModalProps) => {
       isOpen={isOpen}
       onClose={onClose}
       size="6xl"
-      isCentered
+      scrollBehavior="inside"
       motionPreset="slideInBottom"
     >
       <ModalOverlay bg="blackAlpha.700" />
@@ -140,7 +140,7 @@ const WorkModal = ({ isOpen, onClose, work }: WorkModalProps) => {
                       />
                     </Link>
                   )}
-                  {work.youtubeUrl && ( 
+                  {work.youtubeUrl && (
                     <Link href={work.youtubeUrl} isExternal>
                       <IconButton
                         aria-label="YouTube"
@@ -151,7 +151,7 @@ const WorkModal = ({ isOpen, onClose, work }: WorkModalProps) => {
                       />
                     </Link>
                   )}
-                  {work.websiteUrl && ( 
+                  {work.websiteUrl && (
                     <Link href={work.websiteUrl} isExternal>
                       <IconButton
                         aria-label="Website"
