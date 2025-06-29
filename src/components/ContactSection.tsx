@@ -13,7 +13,6 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { keyframes } from "@emotion/react";
 import { FaEnvelope } from "react-icons/fa";
 import WaveAnimation from "./WaveAnimation";
 
