@@ -17,11 +17,6 @@ import { keyframes } from "@emotion/react";
 import { FaEnvelope } from "react-icons/fa";
 import WaveAnimation from "./WaveAnimation";
 
-const scroll = keyframes`
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-`;
-
 const ContactSection = () => {
   const bgColor = useColorModeValue("#fcfcfc", "gray.600");
 
