@@ -6,8 +6,8 @@ import { Box, Flex } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 
 const scroll = keyframes`
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  from { background-position-x: 0; }
+  to { background-position-x: -1920px; }
 `;
 
 interface WaveAnimationProps {
@@ -30,19 +30,12 @@ const WaveAnimation = ({
       height={height}
       width="100%"
       bg={bg}
-    >
-      <Flex width="200%" height="100%" animation={animation}>
-        <Box as="img" src={imageSrc} alt="wave" width="50%" objectFit="cover" />
-        <Box
-          as="img"
-          src={imageSrc}
-          alt="wave-copy"
-          width="50%"
-          objectFit="cover"
-          ml="-1px"
-        />
-      </Flex>
-    </Box>
+      backgroundImage={`url(${imageSrc})`}
+      backgroundRepeat="repeat-x"
+      backgroundSize="auto 100%"
+      backgroundPosition="bottom"
+      animation={animation}
+    />
   );
 };
 
