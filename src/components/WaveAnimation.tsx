@@ -4,6 +4,7 @@
 
 import { Box } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
+import { BoxProps } from "@chakra-ui/react"; 
 
 const scroll = keyframes`
   from { background-position-x: -1920px; }
@@ -15,11 +16,11 @@ interface WaveAnimationProps {
   duration?: number;
   height?: string;
   bg?: string;
-  position?: string;
-  top?: string;
-  bottom?: string;
-  left?: string;
-  right?: string;
+  position?: BoxProps["position"];
+  top?: BoxProps["top"];
+  bottom?: BoxProps["bottom"];
+  left?: BoxProps["left"];
+  right?: BoxProps["right"];
 }
 
 const WaveAnimation = ({
