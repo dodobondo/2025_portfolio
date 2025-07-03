@@ -58,7 +58,7 @@ const AboutPageSection = () => {
         {/* ここに WaveAnimation を移動し、絶対配置を適用 */}
         <WaveAnimation
           imageSrc="/parts_img/wave_reverse.svg"
-          height="7vw"
+          height="5vw"
           position="absolute"
           bottom="0"
           left="0"

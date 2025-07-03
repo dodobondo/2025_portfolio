@@ -21,15 +21,6 @@ const ContactSection = () => {
 
   return (
     <>
-      <WaveAnimation
-        imageSrc="/parts_img/wave.svg"
-        height="7vw"
-        position="absolute"
-        bottom="0"
-        left="0"
-        right="0"
-        bg={bgColor}
-      />
       <Box
         display="flex"
         id="contact"
@@ -37,9 +28,19 @@ const ContactSection = () => {
         height="30vh"
         justifyContent="center"
         alignItems="center"
+        position="relative"
       >
+        <WaveAnimation
+          imageSrc="/parts_img/wave.svg"
+          height="calc(5vw + 1px)"
+          position="absolute"
+          top="0"
+          left="0"
+          right="0"
+          bg={bgColor}
+        />
         <Container maxW="7xl">
-          <VStack py={16} mb={16}>
+          <VStack py={16} mb={1}>
             <Heading
               as="h1"
               py={2}
