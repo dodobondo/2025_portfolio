@@ -25,14 +25,14 @@ const ContactSection = () => {
         display="flex"
         id="contact"
         bg="#0071bc"
-        height="30vh"
+        height="40vh"
         justifyContent="center"
         alignItems="center"
         position="relative"
       >
         <WaveAnimation
           imageSrc="/parts_img/wave.svg"
-          height="calc(5vw + 1px)"
+          height="5vw"
           position="absolute"
           top="0"
           left="0"
