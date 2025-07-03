@@ -4,7 +4,6 @@
 
 import { Box } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
-import type { ResponsiveValue } from "@chakra-ui/react";
 
 const scroll = keyframes`
   from { background-position-x: -1920px; }
@@ -14,7 +13,7 @@ const scroll = keyframes`
 interface WaveAnimationProps {
   imageSrc: string;
   duration?: number;
-  height?: ResponsiveValue<string>;
+  height?: string;
   bg?: string;
   position?: string;
   top?: string;
