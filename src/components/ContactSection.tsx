@@ -21,7 +21,15 @@ const ContactSection = () => {
 
   return (
     <>
-      <WaveAnimation imageSrc="/parts_img/wave.svg" bg={bgColor} />
+      <WaveAnimation
+        imageSrc="/parts_img/wave.svg"
+        height="7vw"
+        position="absolute"
+        bottom="0"
+        left="0"
+        right="0"
+        bg={bgColor}
+      />
       <Box
         display="flex"
         id="contact"

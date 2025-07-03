@@ -20,7 +20,7 @@ const HeroSection = () => {
       id="hero"
       position="relative"
       width="100%"
-      aspectRatio={{ base: 16 / 10, md: 16 / 8 }}
+      aspectRatio={{ base: 16 / 9, md: 16 / 8 }}
       bg="#92d7f3"
     >
       <Box
@@ -31,7 +31,7 @@ const HeroSection = () => {
         backgroundSize="cover"
         backgroundPosition={{ base: "center bottom", md: "center bottom" }}
         backgroundRepeat="no-repeat"
-        backgroundColor="#92d7f3"
+        backgroundColor="#0071bc"
       ></Box>
     </Box>
   );

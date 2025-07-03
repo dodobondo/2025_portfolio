@@ -2,7 +2,7 @@
 
 "use client";
 
-import { Box, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 
 const scroll = keyframes`
@@ -15,13 +15,21 @@ interface WaveAnimationProps {
   duration?: number;
   height?: string;
   bg?: string;
+  position?: string;
+  bottom?: string;
+  left?: string;
+  right?: string;
 }
 
 const WaveAnimation = ({
   imageSrc,
   duration = 30,
   height = "100%",
-  bg = "#fcfcfc",
+  bg = "#0071bc",
+  position,
+  bottom,
+  left,
+  right,
 }: WaveAnimationProps) => {
   const animation = `${scroll} ${duration}s linear infinite`;
 
@@ -35,6 +43,10 @@ const WaveAnimation = ({
       backgroundSize="auto 100%"
       backgroundPosition="bottom"
       animation={animation}
+      position={position}
+      bottom={bottom}
+      left={left}
+      right={right}
     />
   );
 };

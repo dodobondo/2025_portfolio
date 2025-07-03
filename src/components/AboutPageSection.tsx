@@ -10,8 +10,7 @@ import {
   Container,
 } from "@chakra-ui/react";
 
-import WaveAnimation from "./WaveAnimation";    
-
+import WaveAnimation from "./WaveAnimation";
 const AboutPageSection = () => {
   const bgColor = useColorModeValue("#fcfcfc", "gray.600");
 
@@ -26,6 +25,7 @@ const AboutPageSection = () => {
         height="100vh"
         justifyContent="center"
         alignItems="center"
+        position="relative"
       >
         <Container maxW="7xl">
           <Heading
@@ -55,10 +55,19 @@ const AboutPageSection = () => {
             私のことを知る旅を、ゆったりとお楽しみください。
           </Text>
         </Container>
+        {/* ここに WaveAnimation を移動し、絶対配置を適用 */}
+        <WaveAnimation
+          imageSrc="/parts_img/wave_reverse.svg"
+          height="7vw"
+          position="absolute"
+          bottom="0"
+          left="0"
+          right="0"
+          bg={bgColor}
+        />
       </Box>
-      <WaveAnimation imageSrc="/parts_img/wave_reverse.svg" bg={bgColor} />
     </Box>
   );
 };
 
-export default AboutPageSection
+export default AboutPageSection;
