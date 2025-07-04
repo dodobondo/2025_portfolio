@@ -24,7 +24,7 @@ export const works: Work[] = [
       summary: 'ハッカソンで制作した、日常にある口約束を気軽に結び管理するアプリです。デザイン・アプリ設計を行いました。',
       description: 'ハッカソンで制作した、日常にある口約束を気軽に結び管理するアプリです。デザイン・アプリ設計を行いました。\n気軽に約束を結べるように「かわいく親しみやすいUI設計」「約束管理のフロー単純化」「LINE上で動作するアプリ開発」を採用しました。WebアプリをNext.jsで開発し、LIFFと呼ばれるフレームワークを使用してLINEとの連携を実現しています。\n\n2025年3月に外資就活ハッカソンが開催したEngineer Guild Hackathon（全45チーム・188名参加）にて3位入賞しました。',
       tools: ['Figma', 'Adobe Illustrator', 'Yamada UI'],
-      youtubeUrl: 'https://www.youtube.com/watch?v=9RTGRhhiy2c',
+      youtubeUrl: 'https://www.youtube.com/watch?v=AVATjVIzFms&feature=youtu.be',
   },
   {
     id: 3,

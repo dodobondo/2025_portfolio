@@ -31,7 +31,7 @@ const HeroSection = () => {
         backgroundSize="cover"
         backgroundPosition={{ base: "center bottom", md: "center bottom" }}
         backgroundRepeat="no-repeat"
-        backgroundColor="#0071bc"
+        backgroundColor="#92d7f3"
       ></Box>
     </Box>
   );
